@@ -1,0 +1,180 @@
+/* Reset default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    /* Dark background */
+    color: white;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    background-color: #a259ff;
+    /* Purple heading */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* To-Do Item container */
+.todo-item {
+    background-color: #2b2b2b;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Checkbox + text */
+.todo-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Delete icon/button (optional) */
+.delete-btn {
+    color: #a259ff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #a259ff;
+    color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #8a3ce5;
+}
+
+/* Popup Background */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Animate only the popup box */
+.popup-content {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transform: scale(0.8);
+    opacity: 0;
+    animation: popupZoom 0.3s forwards;
+}
+
+/* Keyframes for zoom + fade in */
+@keyframes popupZoom {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Popup Box */
+.popup-content {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content input {
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.popup-content button {
+    padding: 10px 15px;
+    background-color: #a259ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-item.completed label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Animate task appearance */
+.todo-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.4s forwards;
+}
+
+/* When task is deleted */
+.todo-item.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Keyframes for fade in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔁 Task Fade-In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔁 Popup Zoom-In Animation */
+@keyframes popupZoom {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
